@@ -10,9 +10,19 @@ export const CreateArea = () => {
 
     function handleChange(e) {
         const   {name,value} =e.target 
+        setNote(preValue=>{
+            return{  ...preValue,
+            [name]:value,};
+
+        } );
         // console.log(e.target.value);
         // checking fisrt console
     }
+
+function  submitButton (i){
+    i.preventDefault()
+    console.log(i);
+}
     return (
         <div>
             <form>
@@ -29,8 +39,9 @@ export const CreateArea = () => {
 
 
                 </p>
+                <button  onClick={submitButton} > Add</button>
 
-            </form>
+            </form> 
  
 
 
