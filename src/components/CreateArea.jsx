@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const CreateArea = () => {
+export const CreateArea = ({ submitButton, onAdd }) => {
     const [note, setNote] = useState({
 
         Title: "",
@@ -9,20 +9,27 @@ export const CreateArea = () => {
 
 
     function handleChange(e) {
-        const   {name,value} =e.target 
-        setNote(preValue=>{
-            return{  ...preValue,
-            [name]:value,};
+        const { name, value } = e.target
+        setNote(preValue => {
+            return {
+                ...preValue,
+                [name]: value,
+            };
 
-        } );
+        });
         // console.log(e.target.value);
         // checking fisrt console
     }
 
-function  submitButton (i){
-    i.preventDefault()
-    console.log(i);
-}
+    function submitButton(event) {
+        onAdd(note);
+        setNote({
+            Title: "",
+            Content: ""
+        })
+        event.preventDefault()
+        // console.log(i);
+    }
     return (
         <div>
             <form>
@@ -39,10 +46,10 @@ function  submitButton (i){
 
 
                 </p>
-                <button  onClick={submitButton} > Add</button>
+                <button onClick={submitButton} > Add</button>
 
-            </form> 
- 
+            </form>
+
 
 
 

@@ -93,3 +93,13 @@ word-wrap: break-word;
   cursor: pointer;
   outline:none
  }
+
+ .Note button{
+  position: relative;
+  float: right;
+  color:#f88651;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+ }
