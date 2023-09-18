@@ -3,6 +3,7 @@ import './index.css';
 import Header from './components/Header';
 import CreateArea from './components/CreateArea';
 import Note from './components/Note';
+import Count from './components/Count'
 
 const App = (props) => {
   const [notes, setNotes] = useState([]); // Corrected the function name to setNotes
@@ -23,6 +24,8 @@ const App = (props) => {
   return (
     <div>
       <Header />
+      <Count count={notes.length === 0 ? "Empty" : `Showing ${notes.length} Notes Database`} />
+
       <CreateArea onAdd={addNote} />
       {notes.map((note, index) => (
         <Note

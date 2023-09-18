@@ -1,17 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-export const Count = () => {
-  return (
-    <div>
-        
-        
-        
- 
- 
-        
-        
-        
-        
+const Count = ({ count }) => {
+    return (
+        <div>
+            <h3>{count}</h3>
         </div>
-  )
-}
+    );
+};
+
+export default Count;
